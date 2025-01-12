@@ -1,0 +1,862 @@
+/* Site-Wide */
+body {
+    font-family: 'Gothic A1', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #111111;
+    color: white;
+    padding-top: 20px;
+}
+
+/* Top Portion of Nav Bar ( logo ) */
+.navTop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bottom Portion of Nav Bar ( maybe different tabs later ) */
+.navBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Initial Advertising Banner */
+.banner {
+    background: url(https://plus.unsplash.com/premium_photo-1672940671025-113a634f83d1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxhY2slMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    border-bottom: 5px solid black;
+    border-top: 5px solid black;
+}
+
+.bannerContent {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align items to the left */
+    max-width: 100%;
+    /* Use the full width of the container */
+    padding: 0px;
+    /* Maintain padding */
+    gap: 50px;
+    /* Ensure at least 50px gap between text and image */
+}
+
+.bannerText {
+    position: sticky;
+    left: 30px;
+    /* Force the text 30px from the left edge */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    /* Vertically center-align text */
+    color: white;
+    text-align: left;
+}
+
+
+.bannerImage {
+    flex: 1;
+    max-width: 400px;
+    /* Image will not exceed 50% of the banner width */
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    object-fit: cover;
+    margin-left: 50px;
+    /* Keep 50px gap from the text */
+    border-radius: 10px;
+    /* Optional for style */
+}
+
+
+.bannerTitle {
+    font-size: 52px;
+    font-weight: 900;
+    margin: 0 0 10px;
+}
+
+.bannerPrice {
+    font-size: 22px;
+    margin: 0 0 20px;
+}
+
+.buyButton {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    background-color: #111111;
+    padding: 10px 20px;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buyButton:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+/* Features Section */
+.features {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.featureImage {
+    width: 50px;
+    height: 50px;
+}
+
+.featureTitle {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.featureDescription {
+    color: gray;
+    width: 80%;
+    height: 100px;
+    font-size: 80%;
+}
+
+.dialcustomizationtitle {
+    background-color: #111111;
+    padding-top: 0;
+    color: white;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+}
+
+.dialTitle {
+    font-size: 55px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.dialPrice {
+    font-size: 32px;
+    text-align: center;
+    font-weight: 900;
+}
+
+.dialDescription {
+    font-size: 20px;
+    color: gray;
+    text-align: center;
+    font-weight: 300;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.dialPreviewTop {
+    margin: 0px;
+    background-color: #222222;
+    color: #222222;
+    font-size: 40px;
+    border-bottom: 3px solid black;
+}
+
+/* Dial Preview Section */
+
+.dialPreviewContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-right: 0%;
+    background-color: #fff5ea;
+    position: relative;
+    /* Ensures the container stays in position */
+}
+
+.dialPreview {
+    flex: 1 1 55%;
+    max-width: 66%;
+    max-height: 75vh;
+    aspect-ratio: 1;
+    /* Ensures the preview maintains a square aspect ratio */
+    margin: 0;
+    position: sticky;
+    top: 13%;
+    transition: top 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    /* Allows proper centering of child elements */
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+
+.dialImage,
+.dialOverlay {
+    position: absolute;
+    top: 30px;
+    /* Account for top padding */
+    left: 30px;
+    /* Account for left padding */
+    right: 30px;
+    /* Account for right padding */
+    bottom: 30px;
+    /* Account for bottom padding */
+    width: calc(100% - 60px);
+    /* Subtract horizontal padding */
+    height: calc(100% - 60px);
+    /* Subtract vertical padding */
+    object-fit: contain;
+    /* Maintain aspect ratio */
+}
+
+#dialCaseOverlay,
+#dialMovementOverlay {
+    z-index: 10;
+    /* Higher than other overlays */
+    position: absolute;
+    top: 30px;
+    /* Matches other overlays */
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    object-fit: contain;
+    /* Maintain aspect ratio */
+    pointer-events: none;
+    /* Ensures this overlay doesn't block interactions with other elements */
+}
+
+
+
+.dialcustomization {
+    flex: 1;
+    /* Allow customization to take up the remaining space */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff5ea;
+    overflow-y: auto;
+    /* Allow scrolling if content overflows */
+}
+
+
+/* Dial Customization Section */
+
+.dialcolors,
+.dialindicies,
+.dialmovements,
+.dialsizes,
+.dialdesigns,
+.diallogos {
+    background-color: #fff5ea;
+    flex-wrap: wrap;
+    /* Allows the items to wrap onto the next line when needed */
+    border-bottom: 3px solid #fff5ea;
+    border-left: 3px solid #fff5ea;
+    border-right: 3px solid #fff5ea;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-self: self-start;
+    justify-content: center;
+    width: 80%;
+    max-width: 600px;
+    padding-top: 10px;
+}
+
+
+
+.dialsizestitle,
+.dialmovementstitle,
+.dialcolorstitle,
+.dialindiciestitle,
+.dialdesignstitle,
+.diallogostitle {
+    text-align: start;
+    font-weight: 900;
+    background-color: #fff5ea;
+    color: #240000;
+    font-size: 25px;
+    border: none;
+    width: 100%;
+}
+
+.dialsizestitles,
+.dialmovementstitles,
+.dialcolorstitles,
+.dialindiciestitles,
+.dialdesignstitles,
+.diallogostitles {
+    margin-top: 550px;
+    margin-bottom: 10px;
+    background-color: #fff5ea;
+    flex-wrap: wrap;
+    /* Allows the items to wrap onto the next line when needed */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    align-self: self-start;
+    width: 85%;
+    max-width: 900px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #ff5757;
+}
+
+.dialsizestitles {
+    margin-top: 260px;
+}
+
+
+.dialsize,
+.dialmovement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 21px;
+    border: 2px solid #240000;
+    background-color: #fff5ea;
+    border-radius: 15px;
+    margin: 7px;
+    cursor: pointer;
+    color: #240000;
+    width: 100%;
+    min-width: 120px;
+    max-width: 35%;
+    align-self: baseline;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+.dialsize.selected,
+.dialmovement.selected,
+.diallogo.selected {
+    background-color: #fff5ea;
+    color: #240000;
+    font-weight: bold;
+    border: 2px solid #ff5757;
+}
+
+.dialsize:hover,
+.dialmovement:hover,
+.diallogo:hover {
+    background-color: #fff5ea;
+    color: #240000;
+    border: 2px solid #8a0000;
+}
+
+
+.dialcolor,
+.dialindex,
+.dialdesign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid #240000;
+    background-color: #fff5ea;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 22%;
+    height: 120px;
+    /* Adjust as needed */
+    text-align: start;
+}
+
+.dialcolorImage,
+.dialindexImage,
+.dialdesignImage {
+    width: 70%;
+    /* Adjust size */
+}
+
+.dialcolorText,
+.dialindexText,
+.dialdesignText {
+    font-size: 18px;
+    margin-bottom: 0px;
+    font-weight: 700;
+    color: #111111;
+}
+
+
+
+.dialcolor.selected,
+.dialindex.selected,
+.dialdesign.selected {
+    background-color: #fff5ea;
+    border-color: #ff5757;
+}
+
+.dialcolor.selected .dialcolorText,
+.dialindex.selected .dialindexText,
+.dialdesign.selected .dialdesignText {
+    color: #240000;
+}
+
+.dialcolor:hover,
+.dialindex:hover,
+.dialdesign:hover {
+    background-color: #fff5ea;
+    border-color: #8a0000;
+}
+
+.dialcolor:hover .dialcolorText,
+.dialindex:hover .dialindexText,
+.dialdesign:hover .dialdesignText {
+    color: #240000;
+}
+
+
+.dialcolors,
+.dialmovements,
+.dialdesigns,
+.dialindicies,
+.dialsizes,
+.diallogos,
+.dialtexts {
+    display: none;
+}
+
+.dialcolors.active,
+.dialmovements.active,
+.dialdesigns.active,
+.dialindicies.active,
+.dialsizes.active,
+.diallogos.active {
+    display: flex;
+}
+
+
+/* Dial Design & Index Colour Customization */
+
+.colorOption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid black;
+    background-color: #fff5ea;
+    border-radius: 50%;
+    /* Makes it a circle */
+    margin: 10px;
+    cursor: pointer;
+    width: 80px;
+    /* Set the width for the circle */
+    height: 80px;
+    /* Set the height equal to width */
+    text-align: center;
+    font-size: 14px;
+    box-sizing: border-box;
+    /* Ensures padding is included in the width/height */
+    color: black;
+    /* Adjust text color if needed */
+}
+
+.colorOption img {
+    max-width: 60%;
+    /* Ensure the image fits within the circle */
+    max-height: 60%;
+    /* Keep aspect ratio */
+    border-radius: 50%;
+    /* Optional: make the image a circle too */
+}
+
+.colorOption:hover {
+    border-color: #8a0000;
+    font-weight: bold;
+}
+
+.colorOption.selected {
+    border-color: #ff5757;
+    color: #ff5757;
+    font-weight: bold;
+}
+
+.dialdesigncolors,
+.dialincidiescolors {
+    width: 100%;
+    /* Or a max-width to match your layout */
+    max-width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.design_color_title {
+    color: #ff5757;
+    width: 100%;
+    padding-top: 15px;
+    font-size: 22;
+    font-weight: bold;
+}
+
+
+
+/* Dial Logo & Text Customization Styling */
+
+.diallogoheader {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: start;
+    color: #240000;
+    /* Ensures color applies correctly */
+    margin: 0;
+    margin-top: 10px;
+    padding-bottom: 15px;
+    width: 100%;
+    display: block;
+}
+
+.logotextarea {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #333333;
+    color: whitesmoke;
+    resize: none;
+    overflow: auto;
+}
+
+.textbutton {
+    align-self: center;
+    padding: 10px 20px;
+    background-color: black;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.textbutton:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+
+.logo-upload {
+    display: none;
+    /* Hide the input element, styled with the label */
+}
+
+label {
+    display: inline-block;
+    /* Ensure it behaves like a button */
+    background-color: #333333;
+    color: whitesmoke;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #222;
+    text-align: center;
+    /* Center text inside the label */
+    overflow: auto;
+    /* Prevent text from overflowing */
+    max-width: 100%;
+    /* Adjust the maximum width to fit the container */
+}
+
+label:hover {
+    background-color: #444444;
+}
+
+
+#upper-logo-preview,
+#lower-logo-preview {
+    margin-top: 10px;
+    justify-content: center;
+    display: flex;
+}
+
+#upper-logo-preview img,
+#lower-logo-preview img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 5px;
+}
+
+
+/* Customizated Options */
+
+.customSizeSection,
+.customMovementSection {
+    background-color: #191919;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+}
+
+.dialDiameterInput,
+.commentsInput,
+.dialShapeUpload,
+.movementInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #222;
+    color: whitesmoke;
+}
+
+.dialDiameterInput {
+    text-align: right;
+    display: inline-block;
+    width: calc(100% - 40px);
+    /* Adjust to leave space for 'mm' */
+    appearance: textfield;
+    /* To hide arrows in some browsers */
+}
+
+.dialDiameterWrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.commentsInput,
+.movementInput {
+    height: 100px;
+    resize: none;
+}
+
+.saveButton {
+    padding: 10px 15px;
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+
+
+
+
+
+
+/* Uploading Custom Logo Images */
+
+.resizable-image-container {
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    z-index: 11;
+}
+
+.resizable-image-container.show-controls .resize-handle,
+.resizable-image-container.show-controls .remove-button {
+    display: block;
+    /* Show controls */
+}
+
+.resizable-image-container.clicked {
+    z-index: 12;
+    /* Bring clicked image to the front */
+}
+
+.resizable-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: border 0.3s;
+}
+
+.remove-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    color: white;
+    padding: 2px 5px;
+    cursor: pointer;
+    font-size: 12px;
+    display: none;
+    /* Hide by default */
+}
+
+.resize-handle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    /* Hide by default */
+}
+
+.resize-handle.top-left {
+    top: -5px;
+    left: -5px;
+    cursor: nwse-resize;
+}
+
+.resize-handle.top-right {
+    top: -5px;
+    right: -5px;
+    cursor: nesw-resize;
+}
+
+.resize-handle.bottom-left {
+    bottom: -5px;
+    left: -5px;
+    cursor: nesw-resize;
+}
+
+.resize-handle.bottom-right {
+    bottom: -5px;
+    right: -5px;
+    cursor: nwse-resize;
+}
+
+.resize-handle.top {
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: ns-resize;
+}
+
+.resize-handle.bottom {
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: ns-resize;
+}
+
+.resize-handle.left {
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: ew-resize;
+}
+
+.resize-handle.right {
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: ew-resize;
+}
+
+
+
+
+
+
+
+
+.custom-text {
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    pointer-events: none;
+    /* Prevent mouse interactions with the text directly */
+}
+
+.custom-text.dragging {
+    pointer-events: auto;
+    /* Allow dragging interactions */
+    cursor: grabbing;
+}
+
+.font-color-select option {
+    display: flex;
+    align-items: center;
+}
+
+.font-color-select option::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border: 1px solid #000;
+    background-color: currentColor;
+    /* Default color is the option value */
+}
+
+/* For custom dropdown styling */
+.font-color-select option[value="#034638"]::before {
+    background-color: #034638;
+}
+
+.font-color-select option[value="#582C83"]::before {
+    background-color: #582C83;
+}
+
+
+
+
+
+
+
+.dialbutton {
+    float: right;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.dialbutton:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+
+
+
+
+
+.dialPreviewBottom {
+    margin: 0px;
+    background-color: #222222;
+    color: #222222;
+    font-size: 40px;
+    border-top: 3px solid black;
+}
